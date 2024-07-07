@@ -1,0 +1,78 @@
+#body{
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  /* border: 2px solid green; */
+  width: 100vw;
+}
+
+.header {
+  background-color: #eb5353;
+  /* background-color: red; */
+  height: 100%;
+  /* top: 0; */
+  transition: all linear 0.2s;
+  z-index: 11;
+  position: fixed;
+  right: -12rem;
+  top: 0;
+  overflow: hidden;
+}
+
+.header.active {
+  right: 0rem;
+}
+
+.header ul {
+  padding: 5rem 0;
+  display: block;
+  margin: 0 2rem;
+}
+
+
+.allLists {
+  /* border: 2px solid red; */
+  text-decoration: none;
+  /* list-style: none; */
+  /* background: none; */
+  margin: 3rem 0vh;
+  text-align: center;
+}
+
+.allLinks {
+  transition: all linear 0.2s;
+  font-family: "Arimo", sans-serif;
+  font-weight: 600;
+  margin-left: 0vw;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(235, 83, 83);
+  margin: 40px 0px;
+}
+
+.allLinks:hover {
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.menu {
+  width: fit-content;
+  z-index: 110;
+  font-size: 2rem;
+  /* position: relative; */
+  margin-left: auto;
+  /* right: 2rem; */
+  /* top: 2rem; */
+  cursor: pointer;
+  color: rgb(235, 83, 83);
+  transition: all linear 0.3s;
+  /* font-weight: 900; */
+}
+
+.menu.active {
+  color: white;
+}
+
+/* #tog:hover {
+  color: white;
+} */
