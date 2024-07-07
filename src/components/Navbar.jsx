@@ -8,16 +8,7 @@ import {
 import { RxHamburgerMenu } from "react-icons/rx";
 
 export default function Navbar() {
-    // const [mode,setState]=useState('darkmode')
-    
-    // function lightMode(){
-    //     document.getElementById('dot').classList.toggle('active')
-
-    //     mode==='darkmode' ? setState('lightmode') : setState('darkmode')
-
-    // }
-    // document.body.className=mode
-    
+   
     function toggle(e) {
         document.getElementById('header').classList.toggle('active')
         document.getElementById('tog').classList.toggle('active')

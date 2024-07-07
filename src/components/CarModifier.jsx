@@ -1,6 +1,4 @@
 import React, { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
-
 import {
   useGLTF,
   Lightformer,
@@ -9,13 +7,9 @@ import {
   Outlines,
   Html,
 } from "@react-three/drei";
-import { useControls } from "leva";
-import { SpotLightHelper } from "three";
-
 
 const CarModifier = () => {
   const { nodes, materials } = useGLTF("/dodge.glb");
-  const html = useRef();
   const [bodyT, setBodyT] = React.useState(0);
   const [rimT, setRimT] = React.useState(0);
   const [tyreT, setTyreT] = React.useState(0);

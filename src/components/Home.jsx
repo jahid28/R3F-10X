@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Suspense, lazy } from "react";
 import "../css/Home.css";
-import { RGBELoader } from "three-stdlib";
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
-import { easing } from "maath";
 import {
   Center,
   Text3D,
@@ -23,11 +21,6 @@ import {
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
 
-import {
-  BrowserRouter as Router,
-  NavLink
-} from "react-router-dom";
-import { RxHamburgerMenu } from "react-icons/rx";
 const GlassEffect = lazy(() => import("./GlassEffect"));
 const Cloud = lazy(() => import("./Cloud"));
 const CarModifier = lazy(() => import("./CarModifier"));
@@ -40,43 +33,20 @@ const Csv = lazy(() => import("./Csv"));
 const Portal = lazy(() => import("./Portal"));
 
 export default function Home() {
-
   const [num, setNum] = useState(1);
-
-  function toggle(e) {
-    document.getElementById('header').classList.toggle('active')
-    document.getElementById('tog').classList.toggle('active')
-}
-
-function removeToggle() {
-    document.getElementById('header').classList.remove('active')
-    document.getElementById('tog').classList.remove('active')
-
-}
   return (
     <div
       className="homeCont"
       style={{ overflow: "hidden", position: "relative" }}
     >
-
-      <div className="nav">
-      <div className='menu' onClick={toggle}><RxHamburgerMenu/></div>
-
-<div id='header' className="header">
-    <ul>
-        <p onClick={removeToggle}><NavLink className='allLists' to="/"><p className='allLinks navHome'>Home</p></NavLink></p>
-        <p onClick={removeToggle}><NavLink className='allLists' to="/about"><p className='allLinks navAbout'>About</p></NavLink></p>
-    </ul>
-</div>
-      </div>
-
-
-
       <button
         onClick={() => {
           setNum((e) => e - 1);
         }}
+        //if disabled then the button will be greyed ou
+        
         disabled={num <= 1}
+
         id="prev"
       >
         <IoIosArrowDropleftCircle />
@@ -92,21 +62,136 @@ function removeToggle() {
       </button>
 
       {num == 1 && (
-        <p className="info">Glass material effect</p>
-      )}
-      {num == 2 && <p className="info">Thunder cloud with some camera shake</p>}
-      {num == 3 && (
         <p className="info">
-          Car Modifier : Click on body/rims/tyres/grill to change their colors
+          1. Glass material effect (
+          <a
+          target="_blank"
+            className="code"
+            href="https://github.com/jahid28/R3F-10X/blob/main/src/components/GlassEffect.jsx"
+          >
+            Code
+          </a>
+          )
         </p>
       )}
-      {num == 4 && <p className="info">Bowling ball physics using cannon</p>}
-      {num == 5 && <p className="info">Animating a model</p>}
-      {num == 6 && <p className="info">Particles system</p>}
-      {num == 7 && <p className="info">Post Processing stuff</p>}
-      {num == 8 && <p className="info">react-spring animation with stars & trail effect</p>}
-      {num == 9 && <p className="info">CSV with Pivot controls</p>}
-      {num == 10 && <p className="info">Portal magic</p>}
+      {num == 2 && (
+        <p className="info">
+          2. Thunder cloud with some camera shake (
+          <a
+          target="_blank"
+            className="code"
+            href="https://github.com/jahid28/R3F-10X/blob/main/src/components/Cloud.jsx"
+          >
+            Code
+          </a>
+          )
+        </p>
+      )}
+      {num == 3 && (
+        <p className="info">
+          3. Car Modifier : Click on body/rims/tyres/grill to change their
+          colors (
+          <a
+          target="_blank"
+            className="code"
+            href="https://github.com/jahid28/R3F-10X/blob/main/src/components/CarModifier.jsx"
+          >
+            Code
+          </a>
+          )
+        </p>
+      )}
+      {num == 4 && (
+        <p className="info">
+          4. Bowling ball physics using cannon(
+          <a
+          target="_blank"
+            className="code"
+            href="https://github.com/jahid28/R3F-10X/blob/main/src/components/Physics.jsx"
+          >
+            Code
+          </a>
+          )
+        </p>
+      )}
+      {num == 5 && (
+        <p className="info">
+          5. Animating a model(
+          <a
+          target="_blank"
+            className="code"
+            href="https://github.com/jahid28/R3F-10X/blob/main/src/components/Animation.jsx"
+          >
+            Code
+          </a>
+          )
+        </p>
+      )}
+      {num == 6 && (
+        <p className="info">
+          6. Particles system(
+          <a
+          target="_blank"
+            className="code"
+            href="https://github.com/jahid28/R3F-10X/blob/main/src/components/Particles.jsx"
+          >
+            Code
+          </a>
+          )
+        </p>
+      )}
+      {num == 7 && (
+        <p className="info">
+          7. Post Processing stuff(
+          <a
+          target="_blank"
+            className="code"
+            href="https://github.com/jahid28/R3F-10X/blob/main/src/components/Post.jsx"
+          >
+            Code
+          </a>
+          )
+        </p>
+      )}
+      {num == 8 && (
+        <p className="info">
+          8. react-spring animation with stars & trail effect(
+          <a
+          target="_blank"
+            className="code"
+            href="https://github.com/jahid28/R3F-10X/blob/main/src/components/Space.jsx"
+          >
+            Code
+          </a>
+          )
+        </p>
+      )}
+      {num == 9 && (
+        <p className="info">
+          9. CSV with Pivot controls(
+          <a
+          target="_blank"
+            className="code"
+            href="https://github.com/jahid28/R3F-10X/blob/main/src/components/Csv.jsx"
+          >
+            Code
+          </a>
+          )
+        </p>
+      )}
+      {num == 10 && (
+        <p className="info">
+          10. Portal magic(
+          <a
+          target="_blank"
+            className="code"
+            href="https://github.com/jahid28/R3F-10X/blob/main/src/components/Portal.jsx"
+          >
+            Code
+          </a>
+          )
+        </p>
+      )}
 
       <Suspense
         fallback={
@@ -138,7 +223,7 @@ function removeToggle() {
 const CanvasFunc = (props) => {
   return (
     <Canvas>
-      <axesHelper args={[50]} />
+      {/* <axesHelper args={[50]} /> */}
 
       <PerspectiveCamera
         fov={45}
@@ -184,10 +269,8 @@ const CanvasFunc = (props) => {
       {props.num == 9 && <Csv />}
       {props.num == 10 && <Portal />}
 
-      {props.num != 6 && props.num != 8 && <Grid/>}
+      {props.num != 6 && props.num != 8 && <Grid />}
       {/* {props.num != 4 && props.num != 7 && <Grid args={[100,100]} cellColor={"white"} sectionColor={"white"}/>} */}
-
-      
 
       {/* <Rig/> */}
     </Canvas>
@@ -217,15 +300,15 @@ const Grid = ({ number = 23, lineWidth = 0.026, height = 0.5 }) => (
   </Instances>
 );
 
-function Rig() {
-  useFrame((state, delta) => {
-    easing.damp3(
-      state.camera.position,
-      [5 + state.pointer.x * 2, 5 + state.pointer.y * 2, 15],
-      0.4,
-      delta
-    );
-    // easing.damp3(state.camera.position, [5 + state.pointer.x, 5 +Math.atan2(state.pointer.x, state.pointer.y) * 2, 15], 0.4, delta)
-    state.camera.lookAt(0, 5, 0);
-  });
-}
+// function Rig() {
+//   useFrame((state, delta) => {
+//     easing.damp3(
+//       state.camera.position,
+//       [5 + state.pointer.x * 2, 5 + state.pointer.y * 2, 15],
+//       0.4,
+//       delta
+//     );
+//     // easing.damp3(state.camera.position, [5 + state.pointer.x, 5 +Math.atan2(state.pointer.x, state.pointer.y) * 2, 15], 0.4, delta)
+//     state.camera.lookAt(0, 5, 0);
+//   });
+// }

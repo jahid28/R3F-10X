@@ -6,18 +6,9 @@ import {
   Float,
   useGLTF,
   Html,
-  PerspectiveCamera,
-  ScrollControls,
-  useScroll,
-  AccumulativeShadows,
-  RandomizedLight,
-  Loader,
-  Bvh,
 } from "@react-three/drei";
 import {
   EffectComposer,
-  HueSaturation,
-  BrightnessContrast,
   Bloom,
 } from "@react-three/postprocessing";
 import { useControls } from "leva";
@@ -26,7 +17,6 @@ import { Skull } from "../models/Skull";
 const Particles = (props) => {
   const [particles, setParticles] = useState(true);
   const [gg, setGG] = useState([]);
-  const [originalArr, setOriginlaArr] = useState([]);
   const { ...config } = useControls({
     size: { value: 0.015, min: 0.001, max: 0.1 },
     count: { value: 12025, min: 3025, max: 17025,step:500 },
@@ -58,7 +48,6 @@ const Particles = (props) => {
 
     setGG(combineFloat32Arrays(arr1, arr2));
 
-    setOriginlaArr(combineFloat32Arrays(arr1, arr2));
   }
 
   useEffect(() => {
@@ -74,7 +63,7 @@ const Particles = (props) => {
 
   return (
     <group>
-      <Html scale={1} rotation={[0, 0, 0]} position={[0, 3, 0]}>
+      <Html scale={1} rotation={[0, 0, 0]} position={[0, 4, 0]}>
         {particles ? (
           <button
             onClick={() => {
@@ -178,27 +167,7 @@ const Particles = (props) => {
 
       <Environment preset="city" />
 
-      {/* <ContactShadows opacity={0.4} scale={10} blur={0.2} position-y={-0.75} /> */}
-
-      {/* <AccumulativeShadows
-            temporal
-            frames={100}
-            color="orange"
-            colorBlend={2}
-            toneMapped={true}
-            alphaTest={0.75}
-            opacity={2}
-            scale={12}
-          >
-            <RandomizedLight
-              intensity={Math.PI}
-              amount={8}
-              radius={4}
-              ambient={0.5}
-              position={[5, 5, -10]}
-              bias={0.001}
-            />
-          </AccumulativeShadows> */}
+   
     </group>
   );
 };

@@ -7,7 +7,7 @@ import { useEffect,memo,useCallback } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
-
+// https://github.com/jahid28/R3F-10X/blob/main/src/components/Animation.jsx
 import {
   BrowserRouter as Router,
   Routes,

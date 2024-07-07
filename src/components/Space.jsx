@@ -10,7 +10,6 @@ import {
   Bloom,
 } from "@react-three/postprocessing";
 import { useFrame } from "@react-three/fiber";
-import { useControls, button } from "leva";
 
 export default function Space(props) {
   const { nodes, materials } = useGLTF("/rocket2.glb");
@@ -31,9 +30,6 @@ export default function Space(props) {
     delay: 1000,
   });
 
-  // const { ...config } = useControls({
-  //   bloom: { value: 1, max: 5, min: 0, step: 0.1 },
-  // });
   return (
     <group>
       
@@ -46,8 +42,6 @@ export default function Space(props) {
         />
       </EffectComposer>
      
-      {/* <Environment preset="night" /> */}
-      {/* <pointLight position={[5, 0, 5]} intensity={20} color="white" /> */}
       <Planet />
 
       <Stars
@@ -113,10 +107,6 @@ useGLTF.preload("/rocket2.glb");
 
 function Comet({ radius = 80, speed = 1, ...props }) {
   const comet1 = useRef();
-  // useFrame((state) => {
-  //   const t = state.clock.getElapsedTime() * speed
-  //   ref.current.position.set(Math.sin(t) * radius, (Math.cos(t) * radius * Math.atan(t)) / Math.PI / 1.25, 0)
-  // })
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime() * speed;

@@ -14,10 +14,6 @@ import {
   Cloud,
   Line,
   CameraShake,
-  Environment,
-  OrbitControls,
-  ContactShadows,
-  PerspectiveCamera,
 } from "@react-three/drei";
 import { random } from "maath";
 
@@ -28,8 +24,6 @@ export default function ThunderCloud() {
   const [strike, setStrike] = useState(false);
 
   const light = useRef();
-  const light2 = useRef();
-  const rig = useContext(context);
   const [flash] = useState(
     () =>
       new random.FlashGen({
@@ -56,7 +50,6 @@ export default function ThunderCloud() {
     }
   });
 
-  // const points = useMemo(() => new THREE.EllipseCurve(0, 0, 3, 1.15, 0, 2 * Math.PI, false, 0), [])
   return (
     <group>
       {strike && (

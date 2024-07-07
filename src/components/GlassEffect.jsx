@@ -1,25 +1,9 @@
 import React, { useRef } from "react";
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import {
-  Center,
-  Text3D,
-  Environment,
-  Lightformer,
-  RandomizedLight,
-  AccumulativeShadows,
   MeshTransmissionMaterial,
-  PivotControls,
 } from "@react-three/drei";
-import { useControls, button } from "leva";
-import {
-  EffectComposer,
-  HueSaturation,
-  BrightnessContrast,
-  Bloom,
-  GodRays,
-} from "@react-three/postprocessing";
 import * as THREE from "three";
-import { Geometry, Base, Subtraction, Addition } from "@react-three/csg";
 
 const GlassEffect = () => {
   const torus = useRef(null);
@@ -55,14 +39,12 @@ const GlassEffect = () => {
      
       <mesh ref={torus}>
         <torusGeometry args={[1, 0.4, 50, 80]} />
-        {/* <meshStandardMaterial color="yellow" /> */}
         <MeshTransmissionMaterial {...config} />
       </mesh>
 
     
         <mesh position={[0, 0, -3]}>
           <boxGeometry args={[2, 2, 2]} />
-          {/* <MeshTransmissionMaterial {...config} /> */}
           <meshStandardMaterial color="gold" />
         </mesh>
 

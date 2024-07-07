@@ -152,12 +152,6 @@ function Pin(props) {
     mass: 0.5,
     ...props,
     shapes: [
-      // {
-      //   type: "Cylinder",
-      //   position: [0, 0, 0],
-      //   // rotation: [0, 0, 0],
-      //   args: [0.06, 0.16, .8,10],
-      // },
       {
         type: "Cylinder",
         position: [0, 0, 0],
